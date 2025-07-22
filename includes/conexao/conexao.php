@@ -1,7 +1,7 @@
 <?php
 $servidor = "localhost";
 $usuario = "root";  
-$senha = "dvd1224@";
+$senha = "databasekey@31";
 $banco = "sistema_condominio"; 
 
 
