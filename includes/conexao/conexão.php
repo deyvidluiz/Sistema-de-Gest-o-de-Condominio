@@ -2,14 +2,14 @@
 $servidor = "localhost";
 $usuario = "root";  
 $senha = "dvd1224@";
-$banco = "sistema_condominio"; 
+$banco = "db_sistema"; 
 
 
-$conn = new mysqli($servidor, $usuario, $senha, $banco);
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+// if ($conexao->connect_error) {
+//     die("Falha na conexão: " . $conexao->connect_error);
+// }
 
-echo "Conexão bem-sucedida!";
+// echo "Conexão bem-sucedida!";
 ?>
