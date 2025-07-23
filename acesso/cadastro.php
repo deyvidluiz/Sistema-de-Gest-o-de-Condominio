@@ -11,7 +11,6 @@ if (isset($_POST['submit'])) {
     $cpf = $_POST['cpf'];
 
     $result = mysqli_query($conn, "INSERT INTO usuarios(nome,email,senha,tipo,cpf) VALUES('$nome','$email','$senha','$tipo','$cpf')");
-
 }
 
 ?>
