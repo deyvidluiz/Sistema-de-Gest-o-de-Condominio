@@ -21,7 +21,7 @@
          $stmt->execute();
          $result = $stmt->get_result();
 
-         if ($result->num_rows == 3) {
+         if ($result->num_rows == 1) {
             echo"login efetuado com sucesso";
             # co""de...
         }else
