@@ -53,17 +53,20 @@
             <td>$tipo</td>
             <td>$senha</td>
             <td>
-                <a href='#' class='btn btn-primary btn-sm me-1' title='Editar'>
+                <a href='../editar/editarcad.php?id=$id' class='btn btn-primary btn-sm me-1' title='Editar'>
                     <span class='bi bi-pencil'></span> Editar
                 </a>
                 <a href='#' class='btn btn-danger btn-sm' title='Excluir' onclick=\"return confirm('Tem certeza que deseja excluir este usuário?');\">
                     <span class='bi bi-trash'></span> Excluir
                 </a>
+            
             </td>
             </tr>";
        
         }
+        
     ?>
+    
         </tbody>
       </table>
   </tbody>
