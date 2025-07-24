@@ -3,8 +3,17 @@ $servidor = "localhost";
 $usuario = "root";
 $senha = "databasekey@31";
 $banco = "db_sistema";
+$usuario = "root";  
+// <<<<<<< HEAD:includes/conexao/conexão.php
+$senha = "dvd1224@";
+$banco = "db_sistema"; 
+// =======
+// $senha = "databasekey@31";
+// $banco = "sistema_condominio"; 
+// >>>>>>> modfranciel:includes/conexao/conexao.php
 
-$conexao = new mysqli($servidor, $usuario, $senha, $banco);
+
+$mysqli = new mysqli("$servidor", "$usuario", "$senha", "$banco");
 
 if ($conexao->connect_error) {
     die("Falha na conexão: " . $conexao->connect_error);

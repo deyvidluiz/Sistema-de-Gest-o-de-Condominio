@@ -24,14 +24,15 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `tipo` enum('admin','morador','porteiro') NOT NULL DEFAULT 'morador',
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `senha` varchar(255) NOT NULL,
+  `tipo` enum('morador','admin') NOT NULL DEFAULT 'morador',
+  `cpf` varchar(14) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `cpf` (`cpf`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +41,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'dvd','123','deyvidmartins692@gmail.com','morador',1);
+INSERT INTO `usuarios` VALUES (1,'dvd','fvghdsgc@gmail.com','423256','morador','12345678654'),(2,'dvd','deyvidmartins692@gmail.com','1234','morador','435.768.234-11'),(5,'dvd','ddeyvidmartins692@gmail.com','$2y$10$1AUg5c1zjaQ/gae/hB9JlePM7R3z/jDnyuM6ZCQtbpsdKM91rkA4a','morador','234.653.566-00');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-22 19:19:48
+-- Dump completed on 2025-07-23 10:10:34

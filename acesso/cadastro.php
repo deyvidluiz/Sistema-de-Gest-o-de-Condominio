@@ -6,13 +6,36 @@ if (isset($_POST['submit'])) {
 
     $nome = $_POST["nome"];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT);
     $tipo = $_POST['tipo'];
     $cpf = $_POST['cpf'];
+<<<<<<< HEAD
 
     $result = mysqli_query($conn, "INSERT INTO usuarios(nome,email,senha,tipo,cpf) VALUES('$nome','$email','$senha','$tipo','$cpf')");
+=======
+    
+    $sql_verifica = "SELECT * FROM usuarios WHERE email = ? OR cpf = ?";
+    $stmt = $mysqli->prepare($sql_verifica);
+    $stmt->bind_param ("ss", $email, $cpf);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        echo"Email ou Cpf ja cadrastado!!";
+        # co""de...
+    }else {
+        $sql = "INSERT INTO usuarios (nome, email, senha, tipo, cpf) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param("sssss", $nome, $email, $senha, $tipo, $cpf);
+        if ($stmt->execute()) {
+            echo "Cadastro realizado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar: " . $stmt->error;
+        }
+    }
+>>>>>>> dvdHelp
 }
-
+    // $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,tipo,cpf) VALUES('$nome','$email','$senha','$tipo','$cpf')");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
