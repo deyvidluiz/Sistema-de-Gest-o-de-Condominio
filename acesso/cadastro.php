@@ -9,10 +9,8 @@ if (isset($_POST['submit'])) {
     $senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT);
     $tipo = $_POST['tipo'];
     $cpf = $_POST['cpf'];
-<<<<<<< HEAD
 
     $result = mysqli_query($conn, "INSERT INTO usuarios(nome,email,senha,tipo,cpf) VALUES('$nome','$email','$senha','$tipo','$cpf')");
-=======
     
     $sql_verifica = "SELECT * FROM usuarios WHERE email = ? OR cpf = ?";
     $stmt = $mysqli->prepare($sql_verifica);
@@ -33,7 +31,6 @@ if (isset($_POST['submit'])) {
             echo "Erro ao cadastrar: " . $stmt->error;
         }
     }
->>>>>>> dvdHelp
 }
     // $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,tipo,cpf) VALUES('$nome','$email','$senha','$tipo','$cpf')");
 ?>
