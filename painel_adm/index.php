@@ -14,7 +14,7 @@
     include('../includes/conexao/conexao.php');
 
     $sql = "SELECT * FROM usuarios WHERE nome LIKE '%$procurar%'";
-    $dados = mysqli_query($mysqli, $sql);
+    $dados = mysqli_query($conexao, $sql);
     ?>
 
    

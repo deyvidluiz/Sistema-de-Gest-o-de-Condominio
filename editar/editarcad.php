@@ -12,10 +12,10 @@
     <?php
     
     include_once('../includes/conexao/conexao.php'); 
-        $id = $_GET['id'] ?? '';
+        $id = $_POST['id'] ?? '';
         $sql = "SELECT * FROM usuarios WHERE id = $id";
 
-        $dados = mysqli_query($mysqli, $sql);
+        $dados = mysqli_query($conexao, $sql);
         $linha = mysqli_fetch_assoc($dados);
 
 
